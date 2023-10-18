@@ -1,6 +1,13 @@
 #include <stdio.h>
+#include "main.h"
 #include <stdarg.h>
 
+/**
+ * _printf - custom printf function
+ * @format: format string
+ *
+ * Return: number of characters printed
+ */
 int _printf(const char *format, ...)
 {
     va_list args;
