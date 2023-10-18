@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
         char c;
         const char *str;
         int num;
+	long lnum;
         unsigned int unum;
         void *ptr;
 
@@ -69,9 +70,9 @@ int _printf(const char *format, ...)
                     count += snprintf(NULL, 0, "%p", ptr);
                     break;
                 case 'l':
-                    num = count;
-                    printf("%d", num);
-                    count += snprintf(NULL, 0, "%d", num);
+                    lnum = va_arg(args, long);
+                    printf("%ld", lnum);
+                    count += snprintf(NULL, 0, "%ld", lnum);
                     break;
                 default:
                     putchar('%');
